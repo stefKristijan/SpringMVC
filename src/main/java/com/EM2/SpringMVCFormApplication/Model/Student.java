@@ -3,11 +3,19 @@ package com.EM2.SpringMVCFormApplication.Model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import com.EM2.SpringMVCFormApplication.validation.isHobbyValid;
+
 public class Student {
 	
 	private Long id;
 	private String mobile;
+	
 	private String name;
+	
+	@Size(min=2,max=30) @isHobbyValid
 	private String hobby;
 	private Date date;
 	private ArrayList<String> skills;
